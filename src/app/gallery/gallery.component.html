@@ -1,0 +1,65 @@
+<main class="pb-5 d-flex flex-column justify-content-center text-center">
+    <h1 class="pt-4 pb-5">gallery</h1>
+    <div *ngIf="seeNew">
+        <h3>see new</h3>
+    </div>
+    <div *ngIf="searchYourself" class="d-flex gap-3 justify-content-evenly flex-wrap m-3">
+        <h2>search by:</h2>
+        <div class="d-flex flex-column">
+            <mat-label>legal only</mat-label>
+            <mat-checkbox [(ngModel)]="legalOnly" class="m-1"></mat-checkbox>
+        </div>
+        <mat-form-field appearance="fill">
+            <mat-label>class</mat-label>
+            <mat-select [(ngModel)]="class">
+                <mat-option value="mammal">mammal</mat-option>
+                <mat-option value="avian">avian</mat-option>
+                <mat-option value="reptiles">reptiles</mat-option>
+                <mat-option value="insectArachnid">insects and arachnids</mat-option>
+                <mat-option value="marineAnimals">marine Animals</mat-option>
+                <mat-option value="other">Other</mat-option>
+            </mat-select>
+            <mat-hint align="end">choose by class</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+            <mat-label>specie</mat-label>
+            <input [(ngModel)]="specie" matInput placeholder="ex. owl, bee, giraffe">
+            <mat-icon matSuffix>lan</mat-icon>
+            <mat-hint>choose by specie</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>climate zone</mat-label>
+            <mat-select [(ngModel)]="climate">
+                <mat-option value="tropical">tropical</mat-option>
+                <mat-option value="dry">dry</mat-option>
+                <mat-option value="subtropical">subtropical</mat-option>
+                <mat-option value="contintntal">contintntal</mat-option>
+                <mat-option value="highlands">highlands</mat-option>
+                <mat-option value="polars">polars</mat-option>
+                <mat-option value="all">all</mat-option>
+            </mat-select>
+            <mat-hint align="end">choose by climate zone</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>distribution</mat-label>
+            <mat-select [(ngModel)]="distribution">
+                <mat-option value="northAmerica">north america</mat-option>
+                <mat-option value="southAmerica">south america</mat-option>
+                <mat-option value="africa">africa</mat-option>
+                <mat-option value="asia">asia</mat-option>
+                <mat-option value="europe">europe</mat-option>
+                <mat-option value="polars">polars</mat-option>
+                <mat-option value="ociania">ociania</mat-option>
+            </mat-select>
+            <mat-hint align="end">choose by climate zone</mat-hint>
+        </mat-form-field>
+        <button type="button" class="btn btn-outline-dark m-1" (click)="search()">search</button>
+    </div>
+    <button *ngIf="!searchYourself" class="cool m-3 align-self-center"
+        (click)="searchYourself=true; seeNew=false"><b>search
+            for it
+            yourself</b></button>
+    <button *ngIf="!seeNew" class=" cool m-3 align-self-center" (click)="seeNew=true; searchYourself=false"><b>see our
+            new
+            animals</b></button>
+</main>

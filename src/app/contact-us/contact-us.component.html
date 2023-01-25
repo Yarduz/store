@@ -1,0 +1,63 @@
+<div class="pb-5 d-flex flex-column justify-content-center text-center">
+    <h1 class="pt-5">contact us</h1>
+    <div class="box d-flex flex-column">
+        <h3>disclaimer :</h3>
+        <h3>
+            we are not a real company so you can not really contact us,
+            trying to contact us in any way will result in a failure
+        </h3>
+    </div>
+    <div class="lg-d-flex d-flex flex-row justify-content-around lg-col-8">
+        <div class="d-flex flex-column justify-content-center align-items-center box ms-5">
+            <div class="m-2 shadow">
+                <h3 class="m-1" id="contact">you can reach us here in social media</h3>
+            </div>
+            <div class="m-2 shadow" (click)="SMC()">
+                <i class="m-1 bi bi-twitter"></i>
+                <i class="m-1 bi bi-instagram"></i>
+                <i class="m-1 bi bi-pinterest"></i>
+                <i class="m-1 bi bi-facebook"></i>
+                <i class="m-1 bi bi-whatsapp"></i>
+                <i class="m-1 bi bi-telegram"></i>
+                <i class="m-1 bi bi-youtube"></i>
+                <i class="m-1 bi bi-tiktok"></i>
+            </div>
+            <div class="m-2">
+                <button *ngIf="displayBtn" mat-raised-button color="warn">once again... this is a fake site <br> it has
+                    no social
+                    media
+                </button>
+            </div>
+        </div>
+        <img class="lg-col-3 justify-self-center img-fluid d-none d-lg-block" id="sqrl"
+            src="../../assets/images/squirrel.png" alt="">
+    </div>
+    <div class="lg-d-flex d-flex flex-row justify-content-around lg-col-8">
+        <img class="lg-col-3 justify-self-center img-fluid d-none d-lg-block" id="birdie"
+            src="../../assets/images/birdie.png" alt="">
+        <div class="d-flex flex-column justify-content-center align-items-center box">
+            <h3 class="p-3">other ways to reach us</h3>
+            <p>our devoted employee will answer your call 24/7</p>
+            <h4>Jamal - +972-50-576-7987</h4>
+            <h4>office - 077-706-7057</h4>
+            <h4>email - sangoku_boobmaster69@walla.com</h4>
+        </div>
+    </div>
+    <div class="box">
+        <H3>you can also try and find us in real life</H3>
+        <p>we are conviniently located in the Antarctica reseach station "halley", and we are open from 9:30 to 11:00
+            (only on hollydays)</p>
+        <div class="p-2">
+            <iframe class="border border-dark border-3 border-opacity-50 rounded"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d21753242.997291822!2d-15.5078855!3d-70.5626944!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xba5b7cc1f71286e3%3A0xc729c4a69cf554ec!2sHalley%20Research%20Station!5e0!3m2!1sen!2sil!4v1665081967583!5m2!1sen!2sil"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <img class="justify-self-center img-fluid d-none d-lg-block" src="../../assets/images/ping.png" alt="" id="ping">
+    <div class="box">
+        <h3>instant messaging service (will actually reach us so please don't use it)</h3>
+        <h3>here should be a socket io part</h3>
+    </div>
+    <img class="lg-col-3 justify-self-center img-fluid d-none d-md-block" id="monkey"
+        src="../../assets/images/monkey.png" alt="">
+</div>

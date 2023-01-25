@@ -1,0 +1,29 @@
+#most {
+    font-weight: bold;
+}
+
+.logPass {
+    margin-left: 8px;
+}
+
+#passEye {
+    background: #FA854B;
+}
+
+#kangaroo {
+    min-width: 200px;
+    min-height: 100px;
+}
+
+h1 {
+    font-family: 'Lobster', serif;
+    font-size: 300%;
+}
+
+.example-section {
+    margin: 12px 0;
+}
+
+.example-margin {
+    margin: 0 12px;
+}

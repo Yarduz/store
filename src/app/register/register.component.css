@@ -1,0 +1,29 @@
+h1 {
+    font-family: 'Lobster', serif;
+    font-size: 300%;
+}
+
+#main {
+    display: block;
+}
+
+#passEye {
+    background: #FA854B;
+}
+
+#regBtn {
+    background: #FA854B;
+}
+
+#regBtn:hover {
+    background: #212529;
+}
+
+@media(min-width: 1100px) {
+    #bg {
+        background: url('file:../../assets/images/spidy.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: right;
+    }
+}

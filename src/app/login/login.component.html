@@ -1,0 +1,42 @@
+<div id="most" class="d-flex flex-column text-center pb-5">
+    <h1 class="p-4">login</h1>
+    <div class="d-flex justify-content-center flex-column flex-lg-row">
+        <div class="">
+            <div id="emailDiv" class="p-3">
+                <label class="mx-1" for="">Email :</label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter your email</mat-label>
+                        <input id="email" matInput placeholder="pat@example.com" [(ngModel)]="logEmail"
+                            [formControl]="email" required>
+                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="p-3">
+                <label class="mx-1" for="">password :</label>
+                <div class="logPass">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter your password</mat-label>
+                        <input id="pass" [(ngModel)]="logPass" matInput [type]="hide ? 'password' : 'text'">
+                        <button id="passEye" mat-icon-button matSuffix (click)="hide = !hide"
+                            [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+            </div>
+            <section class="example-section">
+                <mat-checkbox [(ngModel)]="remember" class="example-margin">remember me</mat-checkbox>
+            </section>
+            <div class="pb-4 p-3 d-flex align-items-center justify-content-center">
+                <button (click)="login()" class="btn btn-outline-dark">login</button>
+            </div>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+            <p>dont have an account yet?</p>
+            <button (click)="toRegister()" class="btn btn-outline-dark">register</button>
+            <img id="kangaroo" class="img-fluid d-none d-lg-block" src="../../assets/images/kangaroo.png" alt="">
+        </div>
+    </div>
+</div>

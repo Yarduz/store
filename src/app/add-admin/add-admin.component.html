@@ -1,0 +1,54 @@
+<main class="pb-5 pt-3">
+    <div *ngIf="!addAdmin" class="d-flex justify-content-center p-2">
+        <button (click)="addAdminClick()" mat-flat-button color="primary">add an admin user</button>
+    </div>
+    <div *ngIf="addAdmin" class="d-flex justify-content-center p-2">
+        <div class="d-flex flex-column">
+            <h2>fill neccessary fields:</h2>
+            <div class="col-5 d-flex flex-column">
+                <div class="py-3 px-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter your email</mat-label>
+                        <input [(ngModel)]="adminEmail" matInput placeholder="pat@example.com" [formControl]="email"
+                            required>
+                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="py-3 px-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter your password</mat-label>
+                        <input [(ngModel)]="adminPassword" matInput [type]="hide ? 'password' : 'text'">
+                        <button id="passEye" mat-icon-button matSuffix (click)="hide = !hide"
+                            [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+                <div class="py-3 px-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label>re-enter your password</mat-label>
+                        <input [(ngModel)]="reEnter" matInput [type]="hide ? 'password' : 'text'">
+                        <button id="passEye" mat-icon-button matSuffix (click)="hide = !hide"
+                            [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+                <button *ngIf="dontMatch" class="p-2 m-2" id="fit" mat-flat-button color="warn">passwords don't
+                    match</button>
+                <div class="py-3 px-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Fill your name</mat-label>
+                        <input placeholder="your name" [(ngModel)]="adminName" matInput>
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    </mat-form-field>
+                </div>
+                <button *ngIf="!registerred" class="p-1" (click)="regAdmin()" mat-raised-button color="primary">register
+                    admin</button>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center p-2">
+        <button *ngIf="registerred" class="p-1" mat-flat-button color="warn">registerred</button>
+    </div>
+</main>

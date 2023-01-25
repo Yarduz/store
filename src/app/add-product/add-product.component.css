@@ -1,0 +1,35 @@
+.file-input {
+    display: none;
+}
+
+mat-expansion-panel {
+    background: rgba(236, 219, 66, 0.7);
+}
+
+.custom-file-upload {
+    padding: 15px;
+}
+
+#textArea {
+    min-width: 65%;
+}
+
+/* 
+mat-button-toggle {
+    background: #d2ad47;
+} */
+
+.checked {
+    background: #5e4604;
+}
+
+mat-button-toggle-group {
+    border: 0;
+    margin: 0;
+    gap: 0;
+}
+
+textarea {
+    min-height: min-content !important;
+    resize: none
+}

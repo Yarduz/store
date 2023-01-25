@@ -1,0 +1,22 @@
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+<div class="fixed-bottom d-flex flex-column d-none d-md-block">
+    <div class="d-flex justify-content-center">
+        <h2 class="m-1" id="contact">you can reach us here</h2>
+        <i (click)="iconClick()" class="bi bi-facebook"></i>
+        <i (click)="iconClick()" class="bi bi-twitter"></i>
+        <i (click)="iconClick()" class="bi bi-instagram"></i>
+        <i (click)="iconClick()" class="bi bi-pinterest"></i>
+        <i (click)="iconClick()" class="bi bi-whatsapp"></i>
+        <i (click)="iconClick()" class="bi bi-telegram"></i>
+        <i (click)="iconClick()" class="bi bi-youtube"></i>
+        <i (click)="iconClick()" class="bi bi-tiktok"></i>
+    </div>
+    <div id="fake" *ngIf="hid" class="d-flex justify-content-center">
+        <h3>this is a fake site, it has no social media</h3>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+}
+
+mat-drawer {
+    background: rgb(41, 17, 2);
+}
+
+.example-container {
+    width: 100%;
+    height: 100%;
+}
+
+#admin {
+    margin: 0%;
+    border: 0px;
+    background-color: #291102;
+    height: inherit;
+}
+
+a {
+    color: #FA854B;
+}
+
+#adminBar {
+    color: #FA854B;
+}
+
+#nav {
+    border: 0px;
+    margin: 0%;
+    background-color: #3a2612;
+}
+
+#outlet {
+    background: #FA854B;
+    color: #3a2612;
+    height: fit-content;
+    width: fit-content;
+}
+
+img {
+    max-height: 12px;
+    max-width: 12px;
+}
+
+#rare {
+    margin-top: 4%;
+    font-family: 'Lobster', serif;
+    font-size: 500%;
+    text-shadow:
+        0 0 0 rgb(255, 0, 0),
+        0 0 0 rgb(0, 255, 0),
+        0 0 0 rgb(0, 0, 255);
+}
+
+#rare:hover {
+    text-shadow:
+        0.3px -0.1px 0.1px rgb(255, 0, 0),
+        0.2px 0.1px 0 rgb(0, 255, 0),
+        -0.1px 0.2px 0 rgb(0, 0, 255);
+    transition: 0.2s cubic-bezier(0.5, 200, 0.5, -200);
+}
+
+#share {
+    margin-top: 3%;
+    font-size: x-large;
+}
+
+#buy {
+    margin-top: 32%;
+    font-size: x-large;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
+
+#logo {
+    min-width: 40px;
+    min-height: 40px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+
+@media (max-width: 586.98px) {
+    #rare {
+        font-size: 300%
+    }
+
+    #buy {
+        margin-top: 10%;
+    }
+
+
+}
+
+@media (max-width: 992px) {
+    mat-drawer {
+        background: rgb(41, 17, 2);
+        background: linear-gradient(270deg, rgba(41, 17, 2, 1) 45%, rgba(58, 38, 18, 1) 55%);
+    }
+
+    #admin {
+        background: none;
+    }
+
+    #nav {
+        background: none;
+    }
+
+    #bars {
+        background: none;
+    }
+}

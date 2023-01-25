@@ -1,0 +1,83 @@
+<div id="bg">
+    <div class="d-flex justify-content-center p-5">
+        <h1>register</h1>
+    </div>
+    <div id="main" class="d-flex flex-column flex-lg-row justify-content-center align-items-center pb-5">
+        <div class="col-5 d-flex flex-column">
+            <div class="py-3 px-4">
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter your email</mat-label>
+                        <input [(ngModel)]="userEmail" matInput placeholder="pat@example.com" [formControl]="email"
+                            required>
+                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="py-3 px-4">
+                <mat-form-field appearance="fill">
+                    <mat-label>Enter your password</mat-label>
+                    <input [(ngModel)]="userPassword" matInput [type]="hide ? 'password' : 'text'">
+                    <button id="passEye" mat-icon-button matSuffix (click)="hide = !hide"
+                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <div class="py-3 px-4">
+                <mat-form-field appearance="fill">
+                    <mat-label>re-enter your password</mat-label>
+                    <input [(ngModel)]="reEnter" matInput [type]="hide ? 'password' : 'text'">
+                    <button id="passEye" mat-icon-button matSuffix (click)="hide = !hide"
+                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <button *ngIf="dontMatch" mat-flat-button color="warn">passwords don't match</button>
+            <div class="py-3 px-4">
+                <mat-form-field appearance="fill">
+                    <mat-label>Fill your name</mat-label>
+                    <input placeholder="your name" [(ngModel)]="userName" matInput>
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="py-3 px-4">
+                <mat-form-field appearance="fill">
+                    <mat-label>fill your state</mat-label>
+                    <input placeholder="your state" [(ngModel)]="userState" matInput>
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="py-3 px-4">
+                <mat-form-field appearance="fill">
+                    <mat-label>fill your city's name</mat-label>
+                    <input placeholder="your city" [(ngModel)]="userCity" matInput>
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="py-3 px-4">
+                <mat-form-field appearance="fill">
+                    <mat-label>fill your street's name</mat-label>
+                    <input placeholder="your street" [(ngModel)]="userStreet" matInput>
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="py-3 px-4">
+                <mat-form-field appearance="fill">
+                    <mat-label>Fill your home number</mat-label>
+                    <input [(ngModel)]="userHomeNum" type="number" matInput placeholder="your home number">
+                </mat-form-field>
+            </div>
+            <div class="py-3 px-4">
+                <mat-form-field appearance="fill">
+                    <mat-label>Fill your phone number</mat-label>
+                    <input [(ngModel)]="userPhone" type="number" matInput placeholder="your phone">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="xxl-col-2">
+            <button id="regBtn" class="btn btn-outline-dark" (click)="register()">register</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+h1 {
+    font-family: 'Lobster', serif;
+    font-size: 300%;
+}
+
+#fit {
+    width: fit-content;
+}

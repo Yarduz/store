@@ -1,0 +1,17 @@
+.fixed-bottom {
+    background: #FC695D;
+}
+
+#contact {
+    font-family: 'Suez One', serif;
+}
+
+#fake {
+    background: black;
+    color: aliceblue;
+}
+
+i {
+    margin-top: 12px;
+    margin-left: 12px;
+}

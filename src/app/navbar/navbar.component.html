@@ -1,0 +1,81 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened class="">
+        <div class="d-flex flex-lg-column" id="bars">
+            <div id="nav" class="py-3 d-flex flex-column">
+                <mat-list>
+                    <mat-list-item role="listitem">
+                        <img routerLink="login" id="logo" class="img img-fluid pointer"
+                            src="../../assets/images/iconKangaroo.png">
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item role="listitem">
+                        <a routerLink="home">home</a>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item role="listitem">
+                        <a routerLink="login">Login</a>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item role="listitem">
+                        <a routerLink="register">register</a>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item role="listitem">
+                        <a routerLink="gallery">Gallery</a>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item role="listitem">
+                        <a routerLink="profile">profile</a>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item role="listitem">
+                        <a routerLink="aboutUs">About Us</a>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item role="listitem">
+                        <a routerLink="contactUs">contact Us</a>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item role="listitem">
+                        <a *ngIf="isLogged" class="pointer" (click)="logout()">Log Out</a>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+            <div class="py-3 d-flex flex-column" id="admin" *ngIf="isAdmin">
+                <mat-list>
+                    <mat-list-item role="listitem">
+                        <a id="adminBar"><b><u>admin bar</u></b></a>
+                    </mat-list-item>
+                    <mat-list-item role="listitem">
+                        <a routerLink="products">products</a>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item role="listitem">
+                        <a routerLink="users">users</a>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item role="listitem">
+                        <a routerLink="orders">orders</a>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                </mat-list>
+            </div>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div id="outlet">
+            <div class="d-flex flex-column">
+                <div class="text-center card">
+                    <video muted loop preload="auto" autoplay="true" class="card-img-top" id="heroVid"
+                        src="../../assets/images/heroDeer.mp4" type="video/mp4"></video>
+                    <div class="card-img-overlay card-inverse">
+                        <h1 id="rare" class="text-stroke">rare friend</h1>
+                        <h2 id="share" class="text-stroke d-none d-md-block">share an unusual life</h2>
+                        <h2 id="buy" class="text-stroke">buy an unusual pet</h2>
+                    </div>
+                </div>
+            </div>
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

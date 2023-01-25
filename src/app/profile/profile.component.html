@@ -1,0 +1,88 @@
+<main class="pb-5 mt-4 d-flex flex-column text-center">
+    <h1 class="p-4">my profile</h1>
+    <div class="box">
+        <h2 class="p-3">my details</h2>
+        <mat-divider></mat-divider>
+        <h3 *ngIf="!needUpdate">my name: {{myUser.name}}</h3>
+        <mat-form-field *ngIf="needUpdate" class="example-form-field" appearance="fill">
+            <mat-label>your new name</mat-label>
+            <input matInput type="text" [(ngModel)]="myUser.name">
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="myUser.name=''">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-form-field *ngIf="needUpdate" appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input [(ngModel)]="myUser.password" matInput [type]="hide ? 'password' : 'text'"
+                value="{{myUser.password}}">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-form-field *ngIf="needUpdate" appearance="fill">
+            <mat-label>re enter your password</mat-label>
+            <input [(ngModel)]="reEnter" matInput [type]="hide ? 'password' : 'text'" value="{{reEnter}}">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <button mat-flat-button color="warn" *ngIf="dontMatch">passwords don't match</button>
+        <mat-divider></mat-divider>
+        <h3 *ngIf="!needUpdate">my email: {{myUser.email}}</h3>
+        <mat-form-field *ngIf="needUpdate" class="example-form-field" appearance="fill">
+            <mat-label>your new email</mat-label>
+            <input matInput type="text" [(ngModel)]="myUser.email">
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="myUser.email=''">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <h3 *ngIf="!needUpdate">my phone: 0{{myUser.phone}}</h3>
+        <mat-form-field *ngIf="needUpdate" class="example-form-field" appearance="fill">
+            <mat-label>your new phone</mat-label>
+            <input matInput type="number" [(ngModel)]="myUser.phone">
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="myUser.phone=0">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+        <h3 *ngIf="!needUpdate">my state: {{myUser.address.state}}</h3>
+        <mat-form-field *ngIf="needUpdate" class="example-form-field" appearance="fill">
+            <mat-label>your new state</mat-label>
+            <input matInput type="text" [(ngModel)]="myUser.address.state">
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="myUser.address.state=''">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <h3 *ngIf="!needUpdate">my city: {{myUser.address.city}}</h3>
+        <mat-form-field *ngIf="needUpdate" class="example-form-field" appearance="fill">
+            <mat-label>your new city</mat-label>
+            <input matInput type="text" [(ngModel)]="myUser.address.city">
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="myUser.address.city=''">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <h3 *ngIf="!needUpdate">my home number: {{myUser.address.homeNum}}</h3>
+        <mat-form-field *ngIf="needUpdate" class="example-form-field" appearance="fill">
+            <mat-label>your new home number</mat-label>
+            <input matInput type="number" [(ngModel)]="myUser.address.homeNum">
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="myUser.address.homeNum=0">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <h3 *ngIf="!needUpdate">my zip: {{myUser.address.zip}}</h3>
+        <mat-form-field *ngIf="needUpdate" class="example-form-field" appearance="fill">
+            <mat-label>your new zip code</mat-label>
+            <input matInput type="number" [(ngModel)]="myUser.address.zip">
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="myUser.address.zip=0">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-divider *ngIf="myUser.admin"></mat-divider>
+        <h2 *ngIf="myUser.admin">admin</h2>
+        <mat-divider></mat-divider>
+        <button (click)="updateBtn()" id="update" mat-raised-button color="primary">{{updateText}}</button>
+    </div>
+    <app-orders></app-orders>
+</main>

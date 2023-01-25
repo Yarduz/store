@@ -1,0 +1,158 @@
+<main class="p-5 d-flex flex-column align-items-center">
+    <div class="pb-3">
+        <button mat-flat-button color="primary" (click)="topBtn()">{{topBText}}</button>
+    </div>
+    <div *ngIf="addAnother">
+        <div class="text-center">
+            <h2 class="">new item number - {{newId}}</h2>
+        </div>
+        <div class="example-action-buttons">
+            <button mat-button (click)="accordion.openAll()">Expand All</button>
+            <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+        </div>
+        <mat-accordion class="example-headers-align mb-3" multi>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Logistics
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        questions about the buisness side
+                    </mat-panel-description>
+                    <mat-icon class=" mx-3">storefront</mat-icon>
+                </mat-expansion-panel-header>
+                <mat-divider class="p-2 m-2"></mat-divider>
+                <mat-radio-group class="" [(ngModel)]="legality">
+                    <mat-label>legal status:</mat-label>
+                    <mat-radio-button name="legal" (click)="addClass()" id="radioLegal" class="m-2 mat-radio-checked"
+                        value="true">
+                        legal</mat-radio-button>
+                    <mat-radio-button name="legal" (click)="removeClass()" class="m-2" value="false">illigal
+                    </mat-radio-button>
+                </mat-radio-group>
+                <mat-divider class="p-2 m-2"></mat-divider>
+                <mat-form-field appearance="fill" floatLabel="always">
+                    <mat-label>price</mat-label>
+                    <input matInput onkeydown="if(event.key=='.'){event.preventDefault()}" [(ngModel)]="price"
+                        type="number" step="1" value="10" min="5" class="text-end">
+                    <span matPrefix>$&nbsp;</span>
+                    <span matSuffix>.00</span>
+                </mat-form-field>
+                <mat-divider class="p-2 m-2"></mat-divider>
+                <mat-form-field appearance="fill">
+                    <mat-label>amount in stock:</mat-label>
+                    <input min="1" onkeydown="if(event.key=='.'){event.preventDefault();}" type="number"
+                        [(ngModel)]="inStock" matInput>
+                </mat-form-field>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        about
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        details about the animal
+                    </mat-panel-description>
+                    <mat-icon class=" mx-3">fingerprint</mat-icon>
+                </mat-expansion-panel-header>
+                <mat-divider class="p-2 m-2"></mat-divider>
+                <mat-button-toggle-group [(ngModel)]="categoryClass" name="fontStyle" aria-label="Font Style">
+                    <mat-button-toggle *ngFor="let e of productClass" value="{{e}}">
+                        {{e}}
+                    </mat-button-toggle>
+                </mat-button-toggle-group>
+                <mat-divider class="p-2 m-2"></mat-divider>
+                <mat-form-field appearance="fill">
+                    <mat-label>Fill Specie</mat-label>
+                    <input [(ngModel)]="main" matInput placeholder="example-dolphin">
+                    <mat-hint>quite specific</mat-hint>
+                </mat-form-field>
+                <mat-divider class="p-2 m-2"></mat-divider>
+                <mat-form-field appearance="fill">
+                    <mat-label>Fill sub Specie</mat-label>
+                    <input [(ngModel)]="sub" matInput placeholder="example-bottlehead dolphin">
+                    <mat-hint>most specific</mat-hint>
+                </mat-form-field>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        origin
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        where did it came from
+                    </mat-panel-description>
+                    <mat-icon class=" mx-3">public</mat-icon>
+                </mat-expansion-panel-header>
+                <mat-divider class="p-2 m-2"></mat-divider>
+                <h3>climate zone</h3>
+                <mat-button-toggle-group [(ngModel)]="climateZone" name="climate" aria-label="climate" multiple>
+                    <mat-button-toggle value="tropical">tropical</mat-button-toggle>
+                    <mat-button-toggle value="{{c}}" *ngFor="let c of climateArr">
+                        {{c}}
+                    </mat-button-toggle>
+                </mat-button-toggle-group>
+                <mat-divider class="p-2 m-2"></mat-divider>
+                <h3>distribution</h3>
+                <mat-button-toggle-group [(ngModel)]="distribution" name="distribution" aria-label="distribution"
+                    multiple>
+                    <mat-button-toggle value="{{d}}" *ngFor="let d of distributionArr">
+                        {{d}}
+                    </mat-button-toggle>
+                </mat-button-toggle-group>
+                <mat-divider class=" p-2 m-2">
+                </mat-divider>
+                <mat-form-field appearance="fill">
+                    <mat-label>Enter some input</mat-label>
+                    <input [(ngModel)]="originAddedText" matInput placeholder="example-mountain tops">
+                    <mat-hint align="end">physical preference</mat-hint>
+                </mat-form-field>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        free text
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        add some free information about it
+                    </mat-panel-description>
+                    <mat-icon class=" mx-3">pets</mat-icon>
+                </mat-expansion-panel-header>
+                <mat-divider class="p-2 m-2"></mat-divider>
+                <mat-form-field id="textArea" hintLabel="Max 160 characters" appearance="fill">
+                    <mat-label>write here</mat-label>
+                    <textarea id="textArea" #input maxlength="160" [(ngModel)]="addedText" matInput
+                        placeholder="dont be stingy"
+                        oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+                    <mat-hint align="end">{{input.value.length || 0}}/160</mat-hint>
+                </mat-form-field>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        photo
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        add a nice picture of the specie
+                    </mat-panel-description>
+                    <mat-icon class=" mx-3">add_a_photo</mat-icon>
+                </mat-expansion-panel-header>
+                <mat-divider class="p-2 m-2"></mat-divider>
+                <label class="custom-file-upload">
+                    <input type="file" class="btn btn-dark" (change)="fileProgress($event)" name="fileName"
+                        accept="image/*">
+                </label>
+            </mat-expansion-panel>
+        </mat-accordion>
+        <div class=" mt-3 pb-3 d-flex justify-content-center">
+            <button mat-flat-button color="primary" class="p-2" (click)="addProduct()">add product! <mat-icon
+                    class="m-1">
+                    add_circle
+                </mat-icon>
+            </button>
+        </div>
+        <div *ngIf="failed" class="mt-3 pb-3 d-flex justify-content-center">
+            <h3>registration failed please check detailes again</h3>
+        </div>
+    </div>
+</main>
